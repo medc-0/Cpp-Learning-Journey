@@ -541,6 +541,29 @@ int main() {
     printInfo(name, age);
     */
 
+    // pointer = variable that stores a memory address of another variable
+    //           sometimes it's easier to work with an address
+
+    // & address-of operator
+    // * dereference operator
+
+    /*
+    std::string name5 = "Med";
+    std::string freeValue[5] = {"value1", "value2", "value3", "value4", "value5"};
+    int age5 = 22;
+
+    int *pAge = &age5;
+    std::string *pName = &name5;
+    std::string *pFreeValue = freeValue;
+
+    std::cout << pName << '\n';
+    std::cout << *pName << '\n';
+    std::cout << pAge << '\n';
+    std::cout << *pAge << '\n';
+    std::cout << freeValue << '\n';
+    std::cout << *pFreeValue << '\n';
+    */
+
     return 0; 
 }
 
