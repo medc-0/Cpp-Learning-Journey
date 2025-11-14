@@ -319,5 +319,14 @@ int main() {
     }
     */
 
+    // for loop = run a block of code a certain
+    //            amount of times.
+
+    /*
+    for (int i = 0; i<=5;i++) {
+        std::cout << i << "\n";
+    }
+    */
+
     return 0; 
 }
