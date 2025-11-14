@@ -278,5 +278,34 @@ int main() {
     number % 2 == 0 ? std::cout << "number is even\n" : std::cout << "number is odd\n";
     */
 
+     // Useful string methods = in c++ for various situations.
+
+    /*
+    std::string name;
+    std::cout << "Enter your name: ";
+    std::getline(std::cin, name);
+
+    name.length();
+    if(name.length() > 12) {
+        std::cout << "\nname cant be longer than 12 characters.";
+    } else {
+        std::cout << "Welcome, " << name << "\n";
+    }
+
+    name.empty();
+    if (name.empty()) {
+        std::cout << "you did not enter your name!" << "\n";
+    } else {
+        std::cout << "you did enter something.\n";
+    }
+
+    name.clear();
+    name.append("@gmail.com");
+    name.at(0);
+    name.insert(0, "#");
+    name.find(' ');
+    name.erase(0, 3);
+    */
+
     return 0; 
 }
