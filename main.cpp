@@ -148,6 +148,19 @@ int main() {
 
     std::cout << z;
     */
+
+    // Calculate = the hypotenuse of a right triangle
+    //             Practice program.
+
+    /*
+    double kat1 = 5.24;
+    double kat2 = 8.25;
+    double hypotenuse;
+
+    hypotenuse = sqrt(pow(kat1, 2) + pow(kat2, 2));
+
+    std::cout << "The side hypotenuse: " << hypotenuse << "cm" << "\n";
+    */
    
     return 0; 
 }
