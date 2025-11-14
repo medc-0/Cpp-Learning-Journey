@@ -30,6 +30,7 @@ void _func2(std::string func__);
 double calculateSquare(double x);
 std::string conncatonateString(std::string string1, std::string string2);
 void sort(int array[], int size);
+void swap(std::string &x, std::string &y);
 */
 
 int main() {
@@ -512,6 +513,22 @@ int main() {
     std::cout << &student << '\n';
     */
 
+
+    // pass by value = copies are created and their values are changed
+    //                 the original variable remains the same value
+    // pass by refernce = we get access to the memory address and change
+    //                    the address so that the original value changes.
+
+    /*
+    std::string x = "water";
+    std::string y = "Lemonade";
+
+    swap(x, y);
+
+    std::cout << "X: " << x << '\n';
+    std::cout << "Y: " << y << '\n';
+    */
+
     return 0; 
 }
 
@@ -546,5 +563,12 @@ void sort(int array[], int size) {
             }
         }
     }
+}
+    
+void swap(std::string &x, std::string &y) {
+    std::string temp;
+    temp = x;
+    x = y;
+    y = temp;
 }
 */
