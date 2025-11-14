@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 // Namespaces with scopes using the :: Operator known as the scope resolution operator
 namespace first
@@ -126,5 +127,27 @@ int main() {
     std::cout << "You are " << age << " Years old" << "\n";
     */
 
+    // Useful Math Related functions = Showcase pof very useful math-related
+    //                                 Functions in C++.
+
+    /*
+    double x = 3.23;
+    double y = 4;
+    double z;
+
+    z = std::max(x, y);
+    z = std::min(x, y);
+    z = pow(2, 4);
+    z = sqrt(36);
+    z = abs(-5);
+    z = round(x);
+    z = ceil(x);
+    z = floor(x);
+    z = tan(x);
+    z = log(20);
+
+    std::cout << z;
+    */
+   
     return 0; 
 }
