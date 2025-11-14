@@ -21,8 +21,22 @@ typedef int num_tp;
 using pairlist_t = std::vector<std::pair<std::string, int>>;
 using text_t = std::string;
 using num_t = int;
+
 int main() {
     
-    std::cout << "Hello, World!" << '\n';
+    /*
+    using std::cout;
+    using std::string;
+
+    const double PI = 3.1459;
+    const int WIDTH = 1920;
+    const int HEIGHT = 1080;
+
+
+    std::string name = "med";
+
+    cout << "Hello, " << name;
+    */
+
     return 0; 
 }
