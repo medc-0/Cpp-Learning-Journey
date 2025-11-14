@@ -436,6 +436,39 @@ int main() {
     std::cout << sizeof(students)/sizeof(students[0]) << " elements\n";
     */
 
+    // iterate over an array
+
+    /*
+    std::string students[] = {"spongebob", "patrick", "squidward"};
+    char grades[] = {'A', 'B', 'C', 'D', 'F'};
+    int grades1[] = {65, 72, 81, 93};
+
+    for (int i = 0; i < 3; i++) {
+        std::cout << students[i] << '\n';
+    }
+
+    for (int i = 0; i < sizeof(students)/sizeof(std::string); i++) {
+        std::cout << students[i] << '\n';
+    }
+
+    for (int i = 0; i < sizeof(grades)/sizeof(grades[0]); i++) {
+        std::cout << grades[i] << '\n';
+    }
+
+     std::cout << students[0] << '\n';
+
+    // foreach loop = loop that eases the traversal over an
+    //                iterable data set
+
+    for (auto student : students) {
+        std::cout << student << '\n';
+    }
+
+    for (int grade : grades1) {
+        std::cout << grade << '\n';
+    }
+    */
+
     return 0; 
 }
 
