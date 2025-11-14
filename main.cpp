@@ -389,6 +389,25 @@ int main() {
     std::cout << "hello, " << fullName << "\n";
     */
 
+    // array = a data structure that can hold multiple values
+    //         values are accessed by an index number
+    //         "kind of like a variable that holds multiple values"
+
+    /*
+    double prices[] = {(double)5.44, (double)2,14, (double)8.12};
+    std::string cars[] = {(std::string)"BMW", (std::string)"Mercedes", (std::string)"Camero", (std::string)"Leopard"};
+    int points[] = {};
+
+    points[0] = 20;
+    points[1] = 63;
+    points[2] = 89;
+    points[3] = 99;
+
+    std::cout << "Cars: " << cars << '\n';
+    std::cout << "prices: " << prices << '\n';
+    std::cout << "points: " << points[0] << ", " << points[1] << ", " << points[2] << ", " << points[3] << '\n';
+    */
+
     return 0; 
 }
 
