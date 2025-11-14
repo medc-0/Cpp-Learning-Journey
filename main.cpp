@@ -161,6 +161,34 @@ int main() {
 
     std::cout << "The side hypotenuse: " << hypotenuse << "cm" << "\n";
     */
-   
+
+    // if statements = do something if a condition is true
+    //                 if not, then don't do it.
+
+    /*
+    bool forSale = true;
+    double money = 30.73;
+    double price = 19.99;
+
+    if (forSale) {
+        if (price < money) {
+            std::cout << "You bought the item!" << "\n";
+        } else {
+            std::cout << "You don't have enough money to buy the item." << "\n";
+        }
+    } else {
+        std::cout << "Item is not for sale." << "\n";
+    }
+
+    int age = 18;
+
+    if (age < 18) {
+        std::cout << "You can't enter." << "\n";
+    }
+    else {
+        std::cout << "You can enter." << "\n";
+    }
+    */
+
     return 0; 
 }
