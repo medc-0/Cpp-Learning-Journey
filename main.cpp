@@ -265,5 +265,18 @@ int main() {
     std::cout << "****************************************";
     */
 
+    // ternary operator ?: = replacement to an if/else statement
+    // condition ? expression1 : expression2
+
+    /*
+    int punkte = 10;
+
+    punkte > 9 ? std::cout << "You have passed!\n" : std::cout << "You did NOT pass!\n";
+
+    int number = 37;
+
+    number % 2 == 0 ? std::cout << "number is even\n" : std::cout << "number is odd\n";
+    */
+
     return 0; 
 }
