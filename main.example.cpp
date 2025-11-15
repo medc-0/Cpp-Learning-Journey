@@ -93,6 +93,20 @@ class Student {
     }
 };
 
+class Pizza {
+    public:
+        std::string topping1;
+        std::string topping2;
+        
+    Pizza(std::string topping1) {
+        this->topping1 = topping1;
+    }
+    Pizza(std::string topping1, std::string topping2) {
+        this->topping1 = topping1;
+        this->topping2 = topping2;
+    }
+};
+
 
 //  Typedef: Example for a very long data type and to reduce writing this everytime we can use a typedef (type-definition)
 /*
@@ -745,6 +759,15 @@ int main() {
     std::cout << student3.name << '\n';
     std::cout << student3.age << '\n';
     std::cout << student3.gpa << '\n';
+
+    // overloaded constructors = instantiate multiple constructors
+    //            in the same class with the same name for different objects.
+
+    Pizza pizza1("pepperoni");
+    Pizza pizza2("Mushrooms", "peppers");
+
+    std::cout << pizza1.topping1 << '\n';
+    std::cout << pizza2.topping1 << " " << pizza2.topping2<< '\n';
 
     return 0; 
 }
