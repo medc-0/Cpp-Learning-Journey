@@ -21,6 +21,30 @@ struct student {
     bool enrolled;
 };
 
+enum Day {
+    monday = 1,
+    tuesday = 2,
+    wednesday = 3,
+    thursday = 4,
+    friday = 5,
+    saturday = 6,
+    sunday = 7
+};
+
+enum CardinalDirections {
+    NORTH = 1,
+    EAST = 2,
+    WEST = 3,
+    SOUTH = 4,
+};
+
+enum Flavor { // Implicit value is assigned! from 0-x
+    vanilla, // 0
+    chocolate, // 1
+    strawberry, // 2
+    mint // 3
+};
+
 //  Typedef: Example for a very long data type and to reduce writing this everytime we can use a typedef (type-definition)
 /*
 typedef std::vector<std::pair<std::string, int>> pairlist_tp;
@@ -621,6 +645,18 @@ int main() {
     std::cout << student2.name << '\n';
     std::cout << student2.gpa << '\n';
     std::cout << student2.enrolled << '\n';
+
+    // enums = a user-defined data type that consists
+    //         of paired name-integer constants.
+    //         GREAT if you have a set of potential options
+
+    Day currentDay = friday;
+    CardinalDirections direction = WEST;
+    Flavor currentFlavor = chocolate;
+
+    std::cout << currentDay << '\n';
+    std::cout << direction << '\n';
+    std::cout << currentFlavor << '\n';
 
     return 0; 
 }
