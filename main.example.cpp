@@ -133,6 +133,65 @@ class Stove {
         }
 };
 
+class Animal {
+    public:
+        bool alive = true;
+    
+    void eat() {
+        std::cout << " Animal is eating\n";
+    }
+};
+
+class Dog : public Animal {
+    public:
+        std::string race;
+
+    void bark() {
+        std::cout << "the dog is barking\n";
+    }
+
+};
+
+class Cat : public Animal {
+    public:
+        
+    void meow() {
+       std::cout << "The cat is meowing!\n";
+    }
+
+};
+
+class Shape {
+    public:
+        int corners;
+        int sides;
+        std::string color;
+
+    void introduce() {
+        std::cout << "I'm a shape and I have " << this->corners << " corners and " << this->sides << " sides! I am also " << this->color << " Coloured!\n";
+    }
+};
+
+class Cube : public Shape {
+    public:
+        int kantes;
+
+    void displayValues() {
+        std::cout << kantes << '\n';
+        std::cout << sides << '\n';
+        std::cout << corners << '\n';
+    }
+};
+
+class Sphere : public Shape {
+    public:
+        int weight;
+
+    void displayWeight() {
+        std::cout << weight << '\n';
+    }
+};
+
 
 //  Typedef: Example for a very long data type and to reduce writing this everytime we can use a typedef (type-definition)
 /*
@@ -803,6 +862,38 @@ int main() {
 
     stove.setTemperature(7);
     std::cout << "the temperature setting is: " << stove.getTemperature();
+
+    // inheritance = A class can receive attributes and methods from another class
+    //               Children classes inherit from Parent class
+    //               Helps to reuse similar code found within multiple classes
+
+    Dog dog;
+    Cat cat;
+
+    cat.meow();
+    cat.eat();
+
+    dog.bark();
+    dog.eat();
+
+    Cube cube;
+
+    cube.kantes = 12;
+    cube.corners = 8;
+    cube.sides = 6;
+    cube.color = "red";
+
+    cube.introduce();
+    cube.displayValues();
+
+    Sphere sphere;
+
+    sphere.color = "yellow!";
+    sphere.corners = 0;
+    sphere.sides = 1;
+    sphere.weight = 3;
+    sphere.introduce();
+    sphere.displayWeight();
 
     return 0; 
 }
