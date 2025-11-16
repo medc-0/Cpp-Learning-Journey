@@ -2,6 +2,9 @@
 
 int main()
 {
-    std::cout << ("Hello, World!") << '\n\0';
+    // dynamic memory
+    // polymorphism
+    // OOP
+
     return 0;
 }
