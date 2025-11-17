@@ -1,29 +1,30 @@
 #include <iostream>
 
-int main() {
+int main()
+{
 
-    int gradeP;
+    short int age, score;
 
+    std::cout << "Enter your age: ";
+    std::cin >> age;
     std::cout << "Enter your score: ";
-    std::cin >> gradeP;
+    std::cin >> score;
 
-    if (gradeP >= 90 && gradeP <= 100) {
-        std::cout << "Your grade is an A!" << '\n';
+    if (age < 18 && score >= 90)
+    {
+        std::cout << "Young genius!" << std::endl;
     }
-    else if (gradeP >= 80 && gradeP <= 89) {
-        std::cout << "Your grade is a B!" << '\n';
+    else if (age >= 18 && score >= 90)
+    {
+        std::cout << "Adult genius!" << std::endl;
     }
-    else if (gradeP >= 70 && gradeP <= 79) {
-        std::cout << "Your grade is a C.." << '\n';
+    else if (score <= 60)
+    {
+        std::cout << "FAILED!" << std::endl;
     }
-    else if (gradeP >= 60 && gradeP <= 69) {
-        std::cout << "Your grade is a D..." << '\n';
-    }
-    else if (gradeP >= 0 && gradeP <= 59) {
-        std::cout << "Your grade is an F...\nBetter luck next time." << '\n';
-    }
-    else {
-        std::cout << "Invalid grade points entered." << '\n';
+    else
+    {
+        std::cout << "Keep trying\n";
     }
 
     return 0;
