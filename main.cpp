@@ -1,31 +1,16 @@
 #include <iostream>
+#include <vector>
 
-int main()
-{
+int main() {
+    std::vector<int> numbers;
 
-    short int age, score;
+    numbers.push_back(2);
+    numbers.push_back(5);
+    numbers.push_back(10);
 
-    std::cout << "Enter your age: ";
-    std::cin >> age;
-    std::cout << "Enter your score: ";
-    std::cin >> score;
-
-    if (age < 18 && score >= 90)
-    {
-        std::cout << "Young genius!" << std::endl;
+    std::cout << "Size: " << numbers.size() << " Capacity: " << numbers.capacity() << '\n';
+    for (int i : numbers) {
+        std::cout << i << ' ';
     }
-    else if (age >= 18 && score >= 90)
-    {
-        std::cout << "Adult genius!" << std::endl;
-    }
-    else if (score <= 60)
-    {
-        std::cout << "FAILED!" << std::endl;
-    }
-    else
-    {
-        std::cout << "Keep trying\n";
-    }
-
     return 0;
 }
