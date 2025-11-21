@@ -1,16 +1,25 @@
 #include <iostream>
 #include <vector>
 
+using vec1 = std::vector<std::string>;
+
 int main() {
-    std::vector<int> numbers;
+    vec1 names;
 
-    numbers.push_back(2);
-    numbers.push_back(5);
-    numbers.push_back(10);
+    names.push_back("bob");
+    names.push_back("sarah");
+    names.push_back("damian");
+    names.push_back("max");
 
-    std::cout << "Size: " << numbers.size() << " Capacity: " << numbers.capacity() << '\n';
-    for (int i : numbers) {
-        std::cout << i << ' ';
+    std::cout << "Size: " << names.size() << " Capacity: " << names.capacity() << std::endl;
+
+    names.push_back("leon");
+    names.push_back("ali");
+
+    for (auto name : names) {
+        std::cout << name << " ";
+        std::cout << std::endl;
     }
+
     return 0;
 }
