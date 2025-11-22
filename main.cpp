@@ -3,17 +3,17 @@
 
 int main() {
 
-    std::vector<int> points = {1, 2, 3, 4, 5};
+    std::vector<int> scores = {1, 2, 3, 4, 5, 6};
 
-    for (auto point : points) {
-        std::cout << point << " ";
+    for (auto score : scores) {
+        std::cout << score << " ";
     }
     std::cout << std::endl;
 
-    for (auto& point : points) {
-        point += 10;
-        std::cout << point << " ";
+    for (auto& score : scores) {
+        score *= 3;
+        std::cout << score << " ";
     }
-
+        
     return 0;
 }
