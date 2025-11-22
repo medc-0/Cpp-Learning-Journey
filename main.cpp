@@ -1,23 +1,22 @@
 #include <iostream>
 #include <vector>
 
-using vec1 = std::vector<std::string>;
-
 int main() {
-    vec1 names;
+    
+    std::vector<int> points = {70, 98, 99, 87, 89};
 
-    names.push_back("bob");
-    names.push_back("sarah");
-    names.push_back("damian");
-    names.push_back("max");
+    for (auto point : points) {
+        std::cout << point << " ";
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
 
-    std::cout << "Size: " << names.size() << " Capacity: " << names.capacity() << std::endl;
+    for (auto& point : points) {
+        point += 10;
+    }
 
-    names.push_back("leon");
-    names.push_back("ali");
-
-    for (auto name : names) {
-        std::cout << name << " ";
+    for (auto point : points) {
+        std::cout << point << " ";
         std::cout << std::endl;
     }
 
