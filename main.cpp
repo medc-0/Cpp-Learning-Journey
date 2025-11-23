@@ -1,24 +1,22 @@
 #include <iostream>
 #include <vector>
 
-int main() {
+int main()
+{
+    std::vector<int> scores = {10, 20, 30, 40, 50, 60};
 
-    std::vector<std::string> colors = {
-        "red", "blue", "green"
-    };
-
-    for (auto color : colors) {
-        std::cout << color << " ";
+    for (auto score : scores) {
+        std::cout << score << ", ";
     }
     std::cout << std::endl;
 
-    colors.insert(colors.begin(), "(dark red)");
-    colors.insert(colors.begin() + 2, "(dark blue)");
-    colors.insert(colors.end(), "(dark green)");
+    scores.insert(scores.begin(), 0);
+    scores.insert(scores.begin() + 3, 25);
+    scores.insert(scores.end(), 70);
 
-    for (auto color : colors) {
-        std::cout << color << " ";
+    for (auto score : scores) {
+        std::cout << score << ", ";
     }
-
+    std::cout << std::endl;
     return 0;
 }
