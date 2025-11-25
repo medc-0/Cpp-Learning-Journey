@@ -1,25 +1,14 @@
 #include <iostream>
-#include <vector>
 
-int main() 
-{
-    std::vector<std::string> animals = {
-        "dog", "cat", "bird"
-    };
+int main() {
 
-    std::string animal1 = "lion";
-    std::string animal2 = "eagle";
-    std::string animal3 = "fish";
+    std::string name;
 
-    animals.insert(animals.begin(), animal1);
-    animals.insert(animals.begin() + 3, animal2);
-    animals.insert(animals.end(), animal3);
-
-    for (auto& animal : animals) {
-        animal += " animal";
-        std::cout << animal << ", ";
+    std::cout << "Enter your name: ";
+    while(name.empty()) {
+        std::getline(std::cin >> std::ws, name);
     }
-    std::cout << std::endl;
+    std::cout << "your name: " << name << '\n';
 
     return 0;
 }
