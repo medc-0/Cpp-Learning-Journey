@@ -10,7 +10,7 @@ int main() {
 
     char buffer[50];
     strftime(buffer, sizeof(buffer), "%Y-%m-%d %H:%M:%S", local);
-    std::cout << "Formatiertes Datum: " << buffer << "\n";
+    std::cout << "Formated Date: " << buffer << "\n";
 
     time_t passed = now + 10;
 
