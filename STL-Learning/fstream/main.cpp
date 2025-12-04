@@ -3,22 +3,22 @@
 #include <string>
 
 int main() {
+
     // Writing to a file
     std::ofstream outfile("example.txt");
     if (outfile.is_open()) {
-        outfile << "Hello, World!\n";
-        outfile << "This is a test file.\n";
+        outfile << "This is some plain text.\n";
+        outfile << "some more text.\n";
         outfile.close();
     } else {
         std::cerr << "Error opening file for writing!" << std::endl;
         return 1;
     }
 
-    // Reading from a file
     std::ifstream inFile("example.txt");
     std::string line;
     if (inFile.is_open()) {
-        while (std::getline(inFile, line)) {
+        while(std::getline(inFile, line)) {
             std::cout << line << std::endl;
         }
         inFile.close();
@@ -26,6 +26,32 @@ int main() {
         std::cerr << "Error opening file for reading!" << std::endl;
         return 1;
     }
+
+    /* Practicing */
+
+    // Writing to a file
+    // std::ofstream outfile("example.txt");
+    // if (outfile.is_open()) {
+    //     outfile << "Hello, World!\n";
+    //     outfile << "This is a test file.\n";
+    //     outfile.close();
+    // } else {
+    //     std::cerr << "Error opening file for writing!" << std::endl;
+    //     return 1;
+    // }
+
+    // Reading from a file
+    // std::ifstream inFile("example.txt");
+    // std::string line;
+    // if (inFile.is_open()) {
+    //     while (std::getline(inFile, line)) {
+    //         std::cout << line << std::endl;
+    //     }
+    //     inFile.close();
+    // } else {
+    //     std::cerr << "Error opening file for reading!" << std::endl;
+    //     return 1;
+    // }
     
     return 0;
 }
