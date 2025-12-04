@@ -1,4 +1,5 @@
 main.exe
+*.exe
 .vscode/
 OpenGL-Project/
 Physics/
