@@ -1,5 +1,5 @@
-main.exe
 *.exe
+*.txt
 .vscode/
 OpenGL-Project/
 Physics/

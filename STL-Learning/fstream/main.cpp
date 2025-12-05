@@ -52,7 +52,27 @@ int main() {
         return 1;
     }
 
+    std::fstream file("text.txt", std::ios::out | std::ios::trunc);
+    if (file) {
+        file << "this works.\n";
+        file << "More plain text.\n";
+        file.close();
+    } else {
+        std::cerr << "Error opening file for writing file." << std::endl;
+        return 1;
+    }
 
+    std::fstream rFile("text.txt");
+    std::string lines;
+    if (rFile) {
+        while (std::getline(rFile, lines)) {
+            std::cout << lines << std::endl;
+        }
+        rFile.close();
+    } else {
+        std::cerr << "Error opening file for reading." << std::endl;
+        return 1;
+    }
     
     return 0;
 }
