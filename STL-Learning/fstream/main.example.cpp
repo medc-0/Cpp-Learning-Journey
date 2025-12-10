@@ -13,7 +13,6 @@ bool writeFile()
     }
     else
     {
-        // dont know how to handle with try-catch...
         std::cerr << "Error cannot open file\n";
         return false;
     }
@@ -33,7 +32,6 @@ bool readFile()
     }
     else 
     {
-        // still dont know how to handle whit throw and catch :sob:
         std::cerr << "Error reading file\n";
         return false;
     }
@@ -138,5 +136,9 @@ int main() {
         return 1;
         // or return EXIT_FAILURE;
     }
+
+    // fstream with exception handling
+    
+
     return 0;
 }
