@@ -35,7 +35,8 @@ int main()
         file.close();
     } else {
         std::cerr << "Error opening file for writing file." << std::endl;
-        return 1;
+        // return 1;
+        return EXIT_FAILURE;
     }
 
     std::fstream rFile("text.txt");
@@ -47,7 +48,8 @@ int main()
         rFile.close();
     } else {
         std::cerr << "Error opening file for reading." << std::endl;
-        return 1;
+        // return 1;
+        return EXIT_FAILURE;
     }
     return 0;
 }
