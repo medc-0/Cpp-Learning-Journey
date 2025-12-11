@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <limits>
+#include <fstream>
 
 void printMenu() 
 {
@@ -13,9 +14,39 @@ void printMenu()
     std::cout << "------------------\n";
 }
 
+void loadTasks(std::vector<std::string>& tasks) 
+{
+    std::ifstream file("tasks.txt");
+    std::string line;
+    if (file.is_open()) 
+    {
+        while (std::getline(file, line)) 
+        {
+            tasks.push_back(line);
+        }
+        file.close();
+    } 
+    else 
+    {
+        std::cerr << "Error loading file\n";
+    }
+}
+
+void saveTasks(const std::vector<std::string>& tasks) 
+{
+    std::ofstream file("tasks.txt");
+    if (!file.is_open()) return;
+    for (auto& task : tasks) 
+    {
+        file << task << '\n';
+    }
+    file.close();
+}
+
 int main() 
 {
     std::vector<std::string> tasks;
+    loadTasks(tasks);
     int choice;
     bool running = true;
 
@@ -35,7 +66,8 @@ int main()
             std::cout << "Enter new task: ";
             std::getline(std::cin, task);
             tasks.push_back(task);
-            std::cout << "Added task << " << task << '\n'; 
+            std::cout << "Added task: " << task << '\n'; 
+            saveTasks(tasks);
         }
         else if (choice == 2) 
         {
@@ -60,7 +92,8 @@ int main()
             {   
                 std::string removedTask = tasks[index];
                 tasks.erase(tasks.begin() + index);
-                std::cout << "Task Removed! " << '"' << removedTask << '"\n';
+                std::cout << "Task Removed! " << '"' << removedTask << '"' << '\n';
+                saveTasks(tasks);
             }
             else 
             {
