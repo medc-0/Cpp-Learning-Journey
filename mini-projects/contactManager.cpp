@@ -10,6 +10,55 @@ struct Contact {
     std::string phone;
 };
 
+void saveContacts(const std::vector<Contact>& contacts)
+{
+    std::ofstream file("contacts.txt");
+
+    if (!file.is_open()) 
+    {   
+        std::cout << "Error: Could not open file for saving!\n";
+        return;
+    } 
+    
+    for (int i=0; i<contacts.size() ;i++) 
+    {
+        file << contacts[i].name << ";" << contacts[i].email << ";" << contacts[i].phone << '\n';
+    }
+        
+    file.close();
+    std::cout << "Contacts saved successfully!\n";
+}
+
+void loadContacts(std::vector<Contact>& contacts) 
+{
+    std::ifstream file("contacts.txt");
+
+    if (!file.is_open()) 
+    {
+        return;
+    }
+    std::string line;
+    while (std::getline(file, line)) 
+    {
+        Contact c;
+
+        size_t pos1 = line.find(";");
+        size_t pos2 = line.find(";", pos1 + 1);
+
+        if (pos1 == std::string::npos || pos2 == std::string::npos) 
+        {
+            continue;
+        }
+
+        c.name = line.substr(0, pos1);
+        c.email = line.substr(pos1 + 1, pos2 - (pos1 + 1));
+        c.phone = line.substr(pos2 + 1);
+
+        contacts.push_back(c);
+    }
+    file.close();
+}
+
 void printMenu() 
 {
     std::cout << "------------------------\n";
@@ -100,6 +149,7 @@ void deleteContact(std::vector<Contact>& contacts)
 int main() 
 {
     std::vector<Contact> contacts;
+    loadContacts(contacts);
 
     int choice;
     bool running = true;
@@ -130,7 +180,8 @@ int main()
             deleteContact(contacts);
         }
         else if (choice == 5) 
-        {
+        {   
+            saveContacts(contacts);
             std::cout << "--------------------\n";
             std::cout << "| Exiting console..|\n";
             std::cout << "--------------------\n";
