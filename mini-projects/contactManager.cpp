@@ -187,7 +187,10 @@ int main()
             std::cout << "--------------------\n";
             running = false;
         }
+        else 
+        {
+            std::cout << "Invalid choice please try again.\n";
+        }
     }
-
     return 0;
 }
