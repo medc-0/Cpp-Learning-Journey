@@ -82,3 +82,43 @@ void draw(
         std::cout << '\n';
     }
 }
+
+int main() 
+{
+    int playerX = 0;
+    int playerY = 0;
+
+    std::vector<std::string> map = loadMap("map.txt", playerX, playerY);
+
+    bool running = true;
+
+    while(running) 
+    {
+        clearScreen();
+        draw(map, playerX, playerY);
+
+        char input;
+        std::cin >> input;
+
+        int newX = playerX;
+        int newY = playerY;
+
+        if (input == 'w') newY--;
+        if (input == 's') newY++;
+        if (input == 'a') newX--;
+        if (input == 'd') newX++;
+        if (input == 'q') running = false;
+
+        // check out of bounds
+        if (newX >= 0 && newY < map.size() &&
+            newX >= 0 && newX < map[newY].size())
+        {
+            if (map[newY][newX] != '#') 
+            {
+                playerX = newX;
+                playerY = newY;
+            }
+        }
+    }
+    return 0;
+}
