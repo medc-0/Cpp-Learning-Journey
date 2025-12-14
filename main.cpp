@@ -3,23 +3,31 @@
 
 int main() 
 {
-    std::vector<std::string> cities = {
-        "Tokyo", "Paris", "New york", "London"
+    std::vector<int> highScores = {
+        100, 200, 300, 400, 500
     };
 
-    for (auto city : cities) 
+    for (auto hScore : highScores )
     {
-        std::cout << city << '\n';
+        std::cout << hScore << '\n';
     }
 
-    std::cout << cities.size() << '\n';
-    cities.clear();
-    std::cout << cities.size() << '\n';
+    highScores.clear();
 
-    if (cities.empty()) 
+    if (highScores.empty()) 
     {
-        std::cout << "No cities left" << '\n';
+        std::cout << "vector cleared adding new scores...\n";
     }
 
+    highScores.push_back(500);
+    highScores.push_back(600);
+    highScores.push_back(700);
+
+    for (auto score : highScores) 
+    {
+        std::cout << score << '\n';
+    }
+
+    std::cout << highScores.size() << '\n';
     return 0;
 }
