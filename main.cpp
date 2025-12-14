@@ -1,33 +1,32 @@
 #include <iostream>
 #include <vector>
 
-int main() 
+int main()
 {
-    std::vector<int> highScores = {
-        100, 200, 300, 400, 500
+    std::vector<std::string> spells = {
+        "Fire", "ice", "Lightning"
     };
 
-    for (auto hScore : highScores )
+    for (auto spell : spells)
     {
-        std::cout << hScore << '\n';
+        std::cout << spell << '\n';
     }
 
-    highScores.clear();
+    spells.insert(spells.begin(), "Earth");
+    spells.insert(spells.end(), "Wind");
 
-    if (highScores.empty()) 
+    spells.erase(spells.begin() + 2);
+
+    for (auto& spell : spells) 
     {
-        std::cout << "vector cleared adding new scores...\n";
+        spell += " spell";
     }
 
-    highScores.push_back(500);
-    highScores.push_back(600);
-    highScores.push_back(700);
-
-    for (auto score : highScores) 
+    for (auto spell : spells) 
     {
-        std::cout << score << '\n';
+        std::cout << spell << '\n';
     }
 
-    std::cout << highScores.size() << '\n';
+    std::cout << "size: " << spells.size() << '\n';
     return 0;
 }
