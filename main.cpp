@@ -3,45 +3,66 @@
 
 int main() 
 {
-    std::vector<int> scores = {
-        85, 92, 78, 90, 66
+    std::vector<int> data = {
+        96, 73, 53, 76, 99, 12, 89, 82
     };
-
-    for (auto score : scores) 
+    
+    for (auto datas : data) 
     {
-        std::cout << score << '\n';
+        std::cout << datas << " ";
     }
+    std::cout << '\n';
 
-    if (scores.front() > 90) 
+    int first = data.front();
+    int last = data.back();
+
+    if (first > 75) 
     {
-        std::cout << "Amazing start!" << '\n';
-    }
-    else if (scores.front() > 80 && scores.front() < 90) 
-    {
-        std::cout << "Good start!" << '\n';
+        if (last % 2 == 0 && data.size() >= 8) 
+        {
+            std::cout << "strong front vector and strong back vector." << '\n';
+        }
+        else if (last % 2 != 0 || data.size() < 8) 
+        {
+            std::cout << "strong front but not a good back vector." << '\n';
+        }
+        else  
+        {
+            std::cout << "unknown back but good front!" << '\n';
+        }
     }
     else 
     {
-        std::cout << "Needs improvement!" << '\n';
+        std::cout << "not a good start!" << '\n';
     }
 
-    if (scores.back() < 70) {
-        std::cout << "last score is low!" << '\n';
-    }
-    else 
+    int counter = 0;
+    for (int i = 0; i < data.size(); i++) 
     {
-        std::cout << "last score is fine!" << '\n';
+        if (data[i] % 2 == 0) 
+        {
+            counter++;
+            if (counter >= data.size()/2) 
+            {
+                std::cout << "Majority even" << '\n';
+            }
+            else {
+                std::cout << "majority not even" << '\n';
+            }
+        }
+        if (data[i] == 77) 
+        {
+            std::cout << "found 77\n";
+        }
+        else 
+        {
+            std::cout << "no 77 was found\n";
+        }
     }
 
-    scores.push_back(100);
-    scores.erase(scores.begin() + 1);
+    data.push_back(100);
+    data.insert(data.begin() + 2, 42);
+    data.erase(data.begin() + 2);
 
-    for (auto score : scores) 
-    {
-        std::cout << score << '\n';
-    }
-
-    std::cout << "Size: " << scores.size() << '\n';
-    std::cout << "Capacity: " << scores.capacity() << '\n';
     return 0;
 }
