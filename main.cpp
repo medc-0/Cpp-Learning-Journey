@@ -1,32 +1,47 @@
 #include <iostream>
 #include <vector>
 
-int main()
+int main() 
 {
-    std::vector<std::string> spells = {
-        "Fire", "ice", "Lightning"
+    std::vector<int> scores = {
+        85, 92, 78, 90, 66
     };
 
-    for (auto spell : spells)
+    for (auto score : scores) 
     {
-        std::cout << spell << '\n';
+        std::cout << score << '\n';
     }
 
-    spells.insert(spells.begin(), "Earth");
-    spells.insert(spells.end(), "Wind");
-
-    spells.erase(spells.begin() + 2);
-
-    for (auto& spell : spells) 
+    if (scores.front() > 90) 
     {
-        spell += " spell";
+        std::cout << "Amazing start!" << '\n';
+    }
+    else if (scores.front() > 80 && scores.front() < 90) 
+    {
+        std::cout << "Good start!" << '\n';
+    }
+    else 
+    {
+        std::cout << "Needs improvement!" << '\n';
     }
 
-    for (auto spell : spells) 
+    if (scores.back() < 70) {
+        std::cout << "last score is low!" << '\n';
+    }
+    else 
     {
-        std::cout << spell << '\n';
+        std::cout << "last score is fine!" << '\n';
     }
 
-    std::cout << "size: " << spells.size() << '\n';
+    scores.push_back(100);
+    scores.erase(scores.begin() + 1);
+
+    for (auto score : scores) 
+    {
+        std::cout << score << '\n';
+    }
+
+    std::cout << "Size: " << scores.size() << '\n';
+    std::cout << "Capacity: " << scores.capacity() << '\n';
     return 0;
 }
