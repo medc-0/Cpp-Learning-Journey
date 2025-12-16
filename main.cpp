@@ -1,29 +1,17 @@
 #include <iostream>
-#include <vector>
+// #include <vector>
 #include <string>
 
 int main() 
-{
-    std::vector<int> numbers;
-    int count = 0;
-    while (count != 8) 
-    {
-        int num;
-        std::cout << "Enter a number: ";
-        std::cin >> num;
-        numbers.push_back(num);
-        count++;
-    }
+{   
+    std::string word;
 
-    for (int i = 0; i < numbers.size(); i++) 
-    {
-        std::cout << numbers[i] << " ";
-    }
-    std::cout << '\n';
+    std::cout << "Enter a word: ";
+    std::getline(std::cin, word);
 
-    for (int i = numbers.size() -1; i >= 0; i--) 
+    for (int i = word.length() -1; i < word.length(); i--)
     {
-        std::cout << numbers[i] << " ";
+        std::cout << word[i];
     }
     std::cout << '\n';
     return 0;
