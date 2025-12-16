@@ -1,68 +1,30 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
 int main() 
 {
-    std::vector<int> data = {
-        96, 73, 53, 76, 99, 12, 89, 82
-    };
-    
-    for (auto datas : data) 
+    std::vector<int> numbers;
+    int count = 0;
+    while (count != 8) 
     {
-        std::cout << datas << " ";
+        int num;
+        std::cout << "Enter a number: ";
+        std::cin >> num;
+        numbers.push_back(num);
+        count++;
+    }
+
+    for (int i = 0; i < numbers.size(); i++) 
+    {
+        std::cout << numbers[i] << " ";
     }
     std::cout << '\n';
 
-    int first = data.front();
-    int last = data.back();
-
-    if (first > 75) 
+    for (int i = numbers.size() -1; i >= 0; i--) 
     {
-        if (last % 2 == 0 && data.size() >= 8) 
-        {
-            std::cout << "strong front vector and strong back vector." << '\n';
-        }
-        else if (last % 2 != 0 || data.size() < 8) 
-        {
-            std::cout << "strong front but not a good back vector." << '\n';
-        }
-        else  
-        {
-            std::cout << "unknown back but good front!" << '\n';
-        }
+        std::cout << numbers[i] << " ";
     }
-    else 
-    {
-        std::cout << "not a good start!" << '\n';
-    }
-
-    int counter = 0;
-    for (int i = 0; i < data.size(); i++) 
-    {
-        if (data[i] % 2 == 0) 
-        {
-            counter++;
-            if (counter >= data.size()/2) 
-            {
-                std::cout << "Majority even" << '\n';
-            }
-            else {
-                std::cout << "majority not even" << '\n';
-            }
-        }
-        if (data[i] == 77) 
-        {
-            std::cout << "found 77\n";
-        }
-        else 
-        {
-            std::cout << "no 77 was found\n";
-        }
-    }
-
-    data.push_back(100);
-    data.insert(data.begin() + 2, 42);
-    data.erase(data.begin() + 2);
-
+    std::cout << '\n';
     return 0;
 }
