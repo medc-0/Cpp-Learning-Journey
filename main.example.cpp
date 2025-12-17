@@ -757,7 +757,7 @@ int main() {
     // was successfully assigned to value.
 
     /*
-    int *pointer = nullptr;
+    int* pointer = nullptr;
     int x = 123;
 
     pointer = &x;
