@@ -2,9 +2,20 @@
 
 int main() 
 {
-    double pi = 3.14;
-    pi = static_cast<int>(pi);
+    int numbers[5];
 
-    std::cout << "pi casted: " << pi << '\n';
+    for (int i = 0; i < 5; i++) 
+    {
+        int num;
+        std::cout << "Enter number to add: ";
+        std::cin >> num;
+
+        numbers[i] = num;
+    }
+
+    for (int i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++) 
+    {
+        std::cout << numbers[i] << " ";
+    }
     return 0;
 }
