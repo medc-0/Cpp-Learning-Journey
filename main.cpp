@@ -2,18 +2,15 @@
 
 int main() 
 {
-    int numbers[5];
+    int numbers[10];
 
-    for (int i = 0; i < 5; i++) 
+    for (int i = 0; i < 10; i++)
     {
-        int num;
-        std::cout << "Enter number to add: ";
-        std::cin >> num;
-
-        numbers[i] = num;
+        std::cout << "Enter a number to add: ";
+        std::cin >> numbers[i];
     }
 
-    for (int i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++) 
+    for (int i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++)
     {
         std::cout << numbers[i] << " ";
     }
