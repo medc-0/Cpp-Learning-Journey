@@ -11,8 +11,11 @@ int main()
     }
 
     for (int i = 0; i < sizeof(numbers)/sizeof(numbers[0]); i++)
-    {
-        std::cout << numbers[i] << " ";
+    {   
+        if (numbers[i] % 2 == 0) 
+        {
+            std::cout << numbers[i] << " ";
+        }
     }
     return 0;
 }
