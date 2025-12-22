@@ -1,43 +1,22 @@
 #include <iostream>
-#include <iomanip>
 
-int main()
+int main() 
 {
-    const int DAYS_WEEK = 7;
-    double temperatures[DAYS_WEEK];
+    const int DIMENSIONS = 3;
+    const int SUBDIMENSIONS = 6;
+    std::string letters[DIMENSIONS][SUBDIMENSIONS] = {
+        {"A", "B", "C", "D", "K", "L"},
+        {"E", "F", "C", "H", "I", "J"},
+        {"E", "F", "G", "H", "M", "N"}
+    };
 
-    for (int i = 0; i < DAYS_WEEK; i++)
+    for (int i = 0; i < DIMENSIONS; i++) 
     {
-        std::cout << "Enter a temperature for the day " << i + 1 << ": ";
-        std::cin >> temperatures[i];
-    }
-
-    // Initialize min, max, sum
-    double lowestTemp = temperatures[0];
-    double highestTemp = temperatures[0];
-    double sum = 0.0;
-
-    for (int i = 0; i < sizeof(temperatures) / sizeof(temperatures[0]); i++)
-    {
-        sum += temperatures[i];
-        std::cout << temperatures[i] << " ";
-
-        // find the highest temp and lowest
-        if (temperatures[i] > highestTemp)
+        for (int j = 0; j < SUBDIMENSIONS; j++) 
         {
-            highestTemp = temperatures[i];
+            std::cout << letters[i][j] << " ";
         }
-        if (temperatures[i] < lowestTemp)
-        {
-            lowestTemp = temperatures[i];
-        }
+        std::cout << '\n';
     }
-    double averageTemp = sum / DAYS_WEEK;
-
-    // results
-    std::cout << std::fixed << std::setprecision(1);
-    std::cout << "\nHighest temperature: " << highestTemp;
-    std::cout << "\nLowest temperature: " << lowestTemp;
-    std::cout << "\nAverage temperature: " << averageTemp << std::endl;
     return 0;
 }
