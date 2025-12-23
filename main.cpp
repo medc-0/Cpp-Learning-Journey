@@ -2,21 +2,27 @@
 
 int main() 
 {
-    const int DIMENSIONS = 3;
-    const int SUBDIMENSIONS = 6;
-    std::string letters[DIMENSIONS][SUBDIMENSIONS] = {
-        {"A", "B", "C", "D", "K", "L"},
-        {"E", "F", "C", "H", "I", "J"},
-        {"E", "F", "G", "H", "M", "N"}
+    int vec3d[2][2][2] = {
+        { 
+            {1, 2},
+            {3, 4}
+        },
+        { 
+            {5, 6},
+            {7, 8}
+        }
     };
 
-    for (int i = 0; i < DIMENSIONS; i++) 
+    for (int i = 0; i < 2; i++) 
     {
-        for (int j = 0; j < SUBDIMENSIONS; j++) 
+        for (int j = 0; j < 2; j++) 
         {
-            std::cout << letters[i][j] << " ";
+            for (int  k = 0; k < 2; k++) 
+            {
+                std::cout << vec3d[i][j][k] << " ";
+            }
+            std::cout << '\n';
         }
-        std::cout << '\n';
     }
     return 0;
 }
