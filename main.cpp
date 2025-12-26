@@ -1,30 +1,47 @@
 #include <iostream>
 
-void applyDamage(int &playerHealth) {
-    int damage;
-    std::cout << "How much damage to deal: ";
-    std::cin >> damage;
-
-    playerHealth -= damage;
+void attackEnemy(int &enemyHealth, int damage) {
+    enemyHealth -= damage;
 }
 
-int main() {
-    int playerHealth;
-    std::cout << "Enter health: ";
-    std::cin >> playerHealth;
+void healHero(int &heroHealth, int healAmount) {
+    heroHealth += healAmount;
+}
 
-    applyDamage(playerHealth);
+void battleSummary(const int heroHealth, const int enemyHealth) {
+    std::cout << "Hero\'s health: " << heroHealth << '\n';
+    std::cout << "Enemy\'s health: " << enemyHealth << '\n';
 
-    if (playerHealth <= 0) {
-        playerHealth = 0;
-        std::cout << "You died.\n";
-        std::cout << "[DEBUG] health: " << playerHealth << '\n';
-    }
-    else if (playerHealth <= 30) {
-        std::cout << "Low health!\n";
+    if (heroHealth > enemyHealth) {
+        std::cout << "Hero has won!\n";
     }
     else {
-        std::cout << "You Survived safely.\n";
+        std::cout << "enemy has won..\n";
     }
+}
+
+
+int main() {
+    int heroHealth;
+    int heroDamage;
+    int heroHeal;
+    int enemyHealth;
+
+    std::cout << "Enter heros starting health: ";
+    std::cin >> heroHealth;
+
+    std::cout << "Enter enemys starting health: ";
+    std::cin >> enemyHealth;
+
+    std::cout << "How much damage does the hero want to deal: ";
+    std::cin >> heroDamage;
+    attackEnemy(enemyHealth, heroDamage);
+
+    std::cout << "Enter how much the hero should be healed: ";
+    std::cin >> heroHeal;
+    healHero(heroHealth, heroHeal);
+
+    std::cout << "Sumarizing battle...\n";
+    battleSummary(heroHealth, enemyHealth);
     return 0;
 }
