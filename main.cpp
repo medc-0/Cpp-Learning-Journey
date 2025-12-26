@@ -1,16 +1,16 @@
 #include <iostream>
 
-int health = 100;
-
-int attack(int);
-
-int main() {
-    std::cout << "Doing damage!\n";
-    attack(50);
-    std::cout << "Health: " << health;
+int increaseHealth(int &health) {
+    return health += 20;
 }
 
-int attack(int damage) {
-    health -= damage;
-    return health;
+int main() {
+    int health = 0;
+    std::cout << "Enter current Health: ";
+    std::cin >> health;
+
+    increaseHealth(health);
+
+    std::cout << "Updated Health: " << health;
+    return 0;
 }
