@@ -1,9 +1,6 @@
 #include <iostream>
 
-void displayGreet() 
-{
-    std::cout << "Hello, C++!\n";
-}
+void displayGreet();
 
 int main() 
 {
@@ -11,4 +8,9 @@ int main()
     displayGreet();
     displayGreet();
     return 0;
+}
+
+void displayGreet()
+{
+    std::cout << "Hello, C++!\n";
 }
