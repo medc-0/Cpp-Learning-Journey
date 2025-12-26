@@ -1,16 +1,15 @@
 #include <iostream>
 
-void displayGreet();
-
-int main() 
-{
-    displayGreet();
-    displayGreet();
-    displayGreet();
-    return 0;
+void attack(int damageAmount) {
+    std::cout << "You attacked and dealt " << damageAmount << " damage!\n";
 }
 
-void displayGreet()
-{
-    std::cout << "Hello, C++!\n";
+int main() {
+    int damageAmount = 0;
+
+    std::cout << "Enter how much damage to deal: ";
+    std::cin >> damageAmount;
+
+    attack(damageAmount);
+    return 0;
 }
