@@ -1,16 +1,30 @@
 #include <iostream>
 
-void increaseHealth(int &health) {
-    health += 20;
+void applyDamage(int &playerHealth) {
+    int damage;
+    std::cout << "How much damage to deal: ";
+    std::cin >> damage;
+
+    playerHealth -= damage;
 }
 
 int main() {
-    int health = 0;
-    std::cout << "Enter current Health: ";
-    std::cin >> health;
+    int playerHealth;
+    std::cout << "Enter health: ";
+    std::cin >> playerHealth;
 
-    increaseHealth(health);
+    applyDamage(playerHealth);
 
-    std::cout << "Updated Health: " << health;
+    if (playerHealth <= 0) {
+        playerHealth = 0;
+        std::cout << "You died.\n";
+        std::cout << "[DEBUG] health: " << playerHealth << '\n';
+    }
+    else if (playerHealth <= 30) {
+        std::cout << "Low health!\n";
+    }
+    else {
+        std::cout << "You Survived safely.\n";
+    }
     return 0;
 }
