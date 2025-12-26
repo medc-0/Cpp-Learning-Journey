@@ -1,7 +1,14 @@
 #include <iostream>
 
-auto main() -> int
+void displayGreet() 
 {
-    std::cout << "Hello, World!\0" << '\n';
+    std::cout << "Hello, C++!\n";
+}
+
+int main() 
+{
+    displayGreet();
+    displayGreet();
+    displayGreet();
     return 0;
 }
