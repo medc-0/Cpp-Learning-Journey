@@ -1,7 +1,7 @@
 #include <iostream>
 
-int increaseHealth(int &health) {
-    return health += 20;
+void increaseHealth(int &health) {
+    health += 20;
 }
 
 int main() {
