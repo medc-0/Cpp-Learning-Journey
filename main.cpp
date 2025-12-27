@@ -1,15 +1,16 @@
 #include <iostream>
 
-void boostHealth(int& health) {
-    health += 50;
+void foo(int* val1, int* val2) {
+    *val1 += 10;
+    *val2 *= 2;
 }
 
 int main() {
-    int playerHealth = 100;
+    int value1 = 0;
+    int value2 = 5;
 
-    std::cout << "player health: " << playerHealth << '\n';
-    boostHealth(playerHealth);
-
-    std::cout << "player Health after: " << playerHealth << '\n';
+    std::cout << "Values before modification: " << value1 << " " << value2 << '\n';
+    foo(&value1, &value2);
+    std::cout << "Values after modification: " << value1 << " " << value2 << '\n';
     return 0;
 }
