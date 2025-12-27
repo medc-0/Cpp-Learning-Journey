@@ -1,20 +1,23 @@
 #include <iostream>
 
 int main() {
-    int mana = 50;
-    int spent;
-    int* ptrMana = &mana;
+    int stamina = 100;
+    int* ptrStamina = &stamina;
+    int spentStamina;
 
-    std::cout << "How much mana to spend?: ";
-    std::cin >> spent;
+    std::cout << "How much stamina spent?: ";
+    std::cin >> spentStamina;
 
-    *ptrMana -= spent;
+    *ptrStamina -= spentStamina;
 
-    if (*ptrMana <= 0) {
-        std::cout << "Out of mana!";
+    if (stamina < 30 && stamina > 1) {
+        std::cout << "Take some rest!\n";
+    }
+    else if (stamina < 0) {
+        std::cout << "Youre exhausted\n";
     }
     else {
-        std::cout << *ptrMana << '\n';
+        std::cout << "You're standing strong!\n";
     }
     return 0;
 }
