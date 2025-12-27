@@ -1,11 +1,20 @@
 #include <iostream>
 
 int main() {
-    int health = 75;
-    int* ptrHealth = &health;
+    int mana = 50;
+    int spent;
+    int* ptrMana = &mana;
 
-    *ptrHealth += 25;
-    std::cout << "Address: " << ptrHealth << '\n';
-    std::cout << "New Health: " << *ptrHealth << '\n';
+    std::cout << "How much mana to spend?: ";
+    std::cin >> spent;
+
+    *ptrMana -= spent;
+
+    if (*ptrMana <= 0) {
+        std::cout << "Out of mana!";
+    }
+    else {
+        std::cout << *ptrMana << '\n';
+    }
     return 0;
 }
