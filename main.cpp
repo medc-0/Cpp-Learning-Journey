@@ -1,10 +1,11 @@
 #include <iostream>
 
 int main() {
-    int coins = 100;
-    int* ptrCoins = &coins;
+    int health = 75;
+    int* ptrHealth = &health;
 
-    std::cout << "Address: " << ptrCoins << '\n';
-    std::cout << "Value: " << *ptrCoins << '\n';
+    *ptrHealth += 25;
+    std::cout << "Address: " << ptrHealth << '\n';
+    std::cout << "New Health: " << *ptrHealth << '\n';
     return 0;
 }
