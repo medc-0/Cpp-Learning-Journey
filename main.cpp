@@ -1,23 +1,25 @@
 #include <iostream>
 
-int main() {
-    int potionCount;
-    int* potionPtr = &potionCount;
+#define a using
+#define b namespace
+#define c std
+#define d ;
+#define e int
+#define f main
+#define g (
+#define h )
+#define i {
+#define j }
+#define k cout
+#define l <<
+#define m "Hello World!"
+#define n endl
+#define o return
+#define p 0
 
-    std::cout << "Enter how many potions you have: ";
-    std::cin >> potionCount;
+a b c d
 
-    if (*potionPtr >= 10) {
-        std::cout << "Youre well stocked!" << '\n';
-        std::cout << *potionPtr << '\n';
-    }
-    else if (*potionPtr >= 5 && *potionPtr <= 9) {
-        std::cout << "Youre running low on potions!" << '\n';
-        std::cout << *potionPtr << '\n';
-    }
-    else {
-        std::cout << "Youre out of potions.." << '\n';
-        std::cout << *potionPtr << '\n';
-    }
-    return 0;
-}
+e f g h i
+    k l m l n d
+    o p d
+j
