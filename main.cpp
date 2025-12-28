@@ -1,16 +1,12 @@
 #include <iostream>
 
-void foo(int* val1, int* val2) {
-    *val1 += 10;
-    *val2 *= 2;
-}
+int main(){
+    int health = 100;
+    int* ptrhealth = &health;
 
-int main() {
-    int value1 = 0;
-    int value2 = 5;
-
-    std::cout << "Values before modification: " << value1 << " " << value2 << '\n';
-    foo(&value1, &value2);
-    std::cout << "Values after modification: " << value1 << " " << value2 << '\n';
+    std::cout << "Health: " << health << '\n';
+    std::cout << "Address of health: " << &health << '\n';
+    std::cout << "Pointer holds: " << ptrhealth << '\n';
+    std::cout << "Pointers points to value: " << *ptrhealth << '\n';
     return 0;
 }
