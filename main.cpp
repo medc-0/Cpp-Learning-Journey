@@ -8,4 +8,5 @@ int main(){
     std::cout << "The address of mana: " << &mana << '\n';
     std::cout << "The address manaPtr holds: " << manaPtr << '\n';
     std::cout << "The value the pointer points to: " << *manaPtr << '\n';
+    return 0;
 }
