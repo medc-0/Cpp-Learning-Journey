@@ -1,12 +1,11 @@
 #include <iostream>
 
 int main(){
-    int health = 100;
-    int* ptrhealth = &health;
+    int mana = 50;
+    int* manaPtr = &mana;
 
-    std::cout << "Health: " << health << '\n';
-    std::cout << "Address of health: " << &health << '\n';
-    std::cout << "Pointer holds: " << ptrhealth << '\n';
-    std::cout << "Pointers points to value: " << *ptrhealth << '\n';
-    return 0;
+    std::cout << "The value of mana: " << mana << '\n';
+    std::cout << "The address of mana: " << &mana << '\n';
+    std::cout << "The address manaPtr holds: " << manaPtr << '\n';
+    std::cout << "The value the pointer points to: " << *manaPtr << '\n';
 }
