@@ -1,17 +1,21 @@
 #include <iostream>
 
-struct Person {
-    std::string name;
-    int age;
-};
+int main() {
+    int size;
+    std::string* words = new std::string[size];
 
-int main()
-{
-    Person person;
-    person.name = "John Doe";
-    person.age = 30;
+    std::cout << "Enter how many words to enter: ";
+    std::cin >> size;
 
-    std::cout << "Name: " << person.name << '\n';
-    std::cout << "Age: " << person.age << '\n';
+    for (int i = 0; i < size; i++) {
+        std::cout << "Enter word " << i + 1 << ": ";
+        std::cin >> words[i];
+    }
+
+    std::cout << "You entered the following words: ";
+    for (int i = 0; i < size; i++) {
+        std::cout << words[i] << ", ";
+    }
+    delete[] words;
     return 0;
 }
