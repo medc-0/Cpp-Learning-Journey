@@ -1,23 +1,17 @@
 #include <iostream>
 
+struct Person {
+    std::string name;
+    int age;
+};
+
 int main()
 {
-    int potions[5] = {
-        2, 5, 0, 10, 7
-    };
-    std::string potNames[5] = {
-        "Health", "Mana", "Stamina", "Strength", "Speed"
-    };
-    int* firstPot = potions;
-    std::string* firstPotN = potNames;
+    Person person;
+    person.name = "John Doe";
+    person.age = 30;
 
-    for (int i = 0; i < 5; i++) {
-        std::cout << "Potion Name: " << *(firstPotN + i) << " | Potion Amount: " << *(firstPot + i) << '\n';
-        *(firstPot + i) += 3; // increase all potions counts by 3
-    }
-    std::cout << "**** After modifications ****\n";
-    for (int i = 0; i < 5; i++) {
-        std::cout << "Potion Name: " << *(firstPotN + i) << " | Potion Amount: " << *(firstPot + i) << '\n';
-    }
+    std::cout << "Name: " << person.name << '\n';
+    std::cout << "Age: " << person.age << '\n';
     return 0;
 }
