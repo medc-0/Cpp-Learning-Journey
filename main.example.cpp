@@ -45,6 +45,12 @@ enum Flavor { // Implicit value is assigned! from 0-x
     mint // 3
 };
 
+enum Levels {
+    EASY = 1, // 1
+    NORMAL = 2, // 2
+    HARD = 3 // 3
+};
+
 class Human {
     public:
         std::string name;
@@ -64,7 +70,6 @@ class Human {
             std::cout << "This person is sleeping!" << '\n';
         }
 };
-
 class Car {
     public:
         std::string make;
@@ -173,10 +178,10 @@ class Shape {
 
 class Cube : public Shape {
     public:
-        int kantes;
+        int edges;
 
     void displayValues() {
-        std::cout << kantes << '\n';
+        std::cout << edges << '\n';
         std::cout << sides << '\n';
         std::cout << corners << '\n';
     }
@@ -463,9 +468,9 @@ int main() {
     // condition ? expression1 : expression2
 
     /*
-    int punkte = 10;
+    int points = 10;
 
-    punkte > 9 ? std::cout << "You have passed!\n" : std::cout << "You did NOT pass!\n";
+    points > 9 ? std::cout << "You have passed!\n" : std::cout << "You did NOT pass!\n";
 
     int number = 37;
 
@@ -798,6 +803,7 @@ int main() {
     //         of paired name-integer constants.
     //         GREAT if you have a set of potential options
 
+    Levels currentLevel = EASY;
     Day currentDay = friday;
     CardinalDirections direction = WEST;
     Flavor currentFlavor = chocolate;
@@ -878,7 +884,7 @@ int main() {
 
     Cube cube;
 
-    cube.kantes = 12;
+    cube.edges = 12;
     cube.corners = 8;
     cube.sides = 6;
     cube.color = "red";
@@ -904,7 +910,7 @@ int main() {
     //                  we will need. Makes our programs more flexible,
     //                  especially when accepting user input.
 
-    int* pNum = NULL;
+    int* pNum = nullptr;
     pNum = new int;
 
     *pNum = 21;
@@ -912,9 +918,9 @@ int main() {
     std::cout << "address: " << pNum << '\n';
     std::cout << "value: " << *pNum << '\n';
 
-    delete pNum; // delete "myVariable" to free up space otherwise memory-leak.
+    delete pNum; // delete "pNum" to free up space otherwise we risk a memory leak
 
-    char* pGrades = NULL;
+    char* pGrades = nullptr;
     int size;
 
     std::cout << "How many grades to enter in?: " << '\n';
@@ -944,17 +950,17 @@ int main() {
     // range-based for-loop or if you want to access the current index
     // without the copies use the '&' Operator.
 
-    for (auto number : numbers) {
+    for (const auto number : numbers) {
         std::cout << number << " ";
     }
     std::cout << '\n';
 
-    for (auto numberf : numbersF) {
+    for (const auto numberf : numbersF) {
         std::cout << numberf << " ";
     }
     std::cout << '\n';
 
-    for (auto name : names) {
+    for (const auto name : names) {
         std::cout << name << " ";
     }
 
@@ -968,7 +974,7 @@ int main() {
     numbers2.push_back(10);
 
     std::cout << "Size: " << numbers2.size() << " Capacity: " << numbers2.capacity() << '\n';
-    for (int i : numbers2) {
+    for (const int i : numbers2) {
         std::cout << i << ' ';
     }
 
@@ -977,7 +983,7 @@ int main() {
 
     std::vector<int> points = {70, 98, 99, 87, 89};
 
-    for (auto point : points) {
+    for (const auto point : points) {
         std::cout << point << " ";
         std::cout << std::endl;
     }
@@ -987,12 +993,16 @@ int main() {
         point += 10; // add +10 to each value
     }
 
-    for (auto point : points) {
+    for (const auto point : points) {
         std::cout << point << " ";
         std::cout << std::endl;
     }
 
-    
+    // Ctime = STL C++ library for managing time and states
+    //         Comes with a few useful functions but kind of outdated
+    // Chrono = Newer and more modern alternative to Ctime more C++
+    //          style rather than old C
+
     time_t now = time(nullptr);
     std::cout << "Unix-timestamp: " << now << '\n';
 
@@ -1020,7 +1030,6 @@ int main() {
     return 0; 
 }
 
-/*
 void _func1() {
     std::cout << "this is a function without parameters\n";
     std::cout << "it is a reuseable block of code\n";
@@ -1061,9 +1070,9 @@ void swap(std::string &x, std::string &y) {
 }
 
 void printInfo(const std::string name, const int age) {
+    // cannot change these because the parameters were passed as const
     // name = " ";
     // age = 0;
     std::cout << name << '\n';
     std::cout << age << '\n';
 }
-*/
