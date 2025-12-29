@@ -19,5 +19,5 @@ int main()
     for (int i = 0; i < 5; i++) {
         std::cout << "Potion Name: " << *(firstPotN + i) << " | Potion Amount: " << *(firstPot + i) << '\n';
     }
-    rdeturn 0;
+    return 0;
 }
