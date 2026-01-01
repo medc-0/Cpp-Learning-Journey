@@ -1,37 +1,57 @@
 #include <iostream>
 #include <cmath>
 
-struct Point {
+struct Vec2 {
     double x, y;
-};
 
-struct Rectangle {
-    Point topLeft;
-    Point bottomRight;
+    Vec2(double x, double y)
+    : x(x), y(y) {}
 
-    double area() const {
-        double width = std::abs(bottomRight.x - topLeft.x);
-        double height = std::abs(topLeft.y - bottomRight.y);
-        return width * height;
+    double length() const {
+        return std::sqrt(x*x + y*y);
     }
 
-    bool contains(const Point& p) const {
-        return (p.x >= topLeft.x && p.x <= bottomRight.x &&
-                p.y <= topLeft.y && p.y >= bottomRight.y);
+    void add(const Vec2& other) {
+        x += other.x;
+        y += other.y;
+    }
+
+    void subtract(const Vec2& other) {
+        x -= other.x;
+        y -= other.y;
+    }
+
+    void scale(double s) {
+        x *= s;
+        y *= s;
+    }
+
+    Vec2 added(const Vec2& other) const {
+        return Vec2 {other.x + x, other.y + y};
+    }
+
+    Vec2 subtracted(const Vec2& other) const {
+        return Vec2{x - other.x, y - other.y};
+    }
+
+    Vec2 scaled(double s) const {
+        return Vec2{x * s, y * s};
+    }
+
+    void print() const {
+        std::cout << "(" << x << ", " << y << ")\n";
     }
 };
 
 int main() {
-    Rectangle r1{{0,5}, {4,0}};
-    Rectangle r2{{1,3}, {3,1}};
+    Vec2 a(3, 4);
+    Vec2 b(1, 2);
 
-    Point p1{2,2};
-    Point p2{5,5};
+    Vec2 c = a.added(b); // New Vec2 (4, 6)
+    Vec2 d = c.scaled(0.5); // New Vec2 (2, 3)
 
-    std::cout << "R1 area: " << r1.area() << "\n";
-    std::cout << "R2 area: " << r2.area() << "\n";
-
-    std::cout << "P1 inside R1? " << (r1.contains(p1) ? "Yes" : "No") << '\n';
-    std::cout << "P2 inside R2? " << (r2.contains(p2) ? "Yes" : "No") << '\n';
+    a.print();
+    c.print();
+    d.print();
     return 0;
 }
