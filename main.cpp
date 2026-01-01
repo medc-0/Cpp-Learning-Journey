@@ -1,60 +1,34 @@
 #include <iostream>
-#include <string>
+#include <vector>
 
-struct Character {
-    std::string name;
-    int speed;
-    int health;
-    double attackDamage;
-    bool alive = true;
+struct Particle {
+    float x, y;
+    float vx, vy;
+    double mass;
 
-    Character(const std::string& n, int s, int h, double attackDamage)
-    : name(n), speed(s), health(h), attackDamage(attackDamage) {}
+    Particle(float x, float y, float vx, float vy, double mass)
+        : x(x), y(y), vx(vx), vy(vy), mass(mass) {}
 
-    void printStats() const {
-        std::cout << "Name: " << name << '\n'
-                  << "HP: " << health << '\n'
-                  << "DMG: " << attackDamage << '\n';
+    void move(double dt) {
+        x += vx * dt;
+        y += vy * dt;
     }
 
-    void attackEntity(Character& other) {
-        if (!other.alive) return;
-
-        other.health -= attackDamage;
-
-        if (other.health <= 0) {
-            other.health = 0;
-            other.alive = false;
-            std::cout << other.name << " has died!\n";
-        }
-
+    void printPos() const {
+        std::cout << "Pos=(" << x << ", " << y << ") Vel=(" << vx << ", " << vy << ")\n";
     }
-};
-struct Entity : Character {
-    using Character::Character;
-};
-
-struct Player : Character {
-    using Character::Character;
 };
 
 int main() {
-    Entity e("Orc", 2, 150, 10.0);
-    Player p("Bob", 4, 100, 5.0);
-    
-    std::cout << e.name << " - ***Stats***\n";
-    e.printStats();
+    Particle particle1(8.2, 1.2, 5.32, 5.85, 100.20);
+    Particle particle2(4.1, 5.8, 3.33, 8.55, 120.9);
+    Particle particle3(12.0, 3.5, 4.35, 9.21, 150.11);
 
-    std::cout << "The " << e.name << " is attacking " << p.name << " with a mace!\n";
-    e.attackEntity(p);
+    std::vector<Particle> particles = {particle1, particle2, particle3};
 
-    std::cout << p.name << " took damage and now players stats: \n";
-    p.printStats();
-
-    std::cout << p.name << " is attacking " << e.name << " with a Fire Sword!\n";
-    p.attackEntity(e);
-    
-    std::cout << "The " << e.name << " took damage and now enemies stats: \n";
-    e.printStats();
+    for (Particle& p : particles) {
+        p.move(0.1);
+        p.printPos();
+    }
     return 0;
 }
