@@ -26,7 +26,7 @@ struct Mover {
     Vec2 position;
     Vec2 velocity;
 
-    Mover(Vec2 position, Vec2 velocity)
+    Mover(const Vec2& position, const Vec2& velocity)
     : position(position), velocity(velocity) {}
 
     void step(double dt) {
@@ -45,7 +45,7 @@ struct Mover {
 
     static double distance(const Mover& a, const Mover& b) {
         double dx = b.position.x - a.position.x;
-        double dy = b.position.x - a.position.y;
+        double dy = b.position.y - a.position.y;
         return std::sqrt(dx*dx + dy*dy);
     }
 
