@@ -1,13 +1,14 @@
 #include <iostream>
 
-int factorial(int n) {
+int steps(int n) {
     if (n == 1) {
         return 1;
     }
-    return n * factorial(n - 1);
+    std::cout << "Step: " << n << '\n';
+    return steps(n - 1);
 }
 
-auto main() -> int {
-    std::cout << "Recursive: " << factorial(5) << '\n';
+int main() {
+    std::cout << steps(100) << '\n';
     return 0;
 }
